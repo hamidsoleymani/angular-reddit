@@ -16,6 +16,11 @@ export class AppComponent {
     this.articles.push(new Article(title.value, link.value, 0));
   }
 
+  sortedArticles(): Article[] {
+     // @ts-ignore
+    return this.articles.sort((a: Article, b: Article) => b.votes - a.votes);
+     }
+
   constructor() {
     this.articles = [
       new Article('Angular 2', 'http://angular.io', 3),
